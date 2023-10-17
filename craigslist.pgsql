@@ -10,6 +10,7 @@ CREATE TABLE craigslist(
 CREATE TABLE categories(
     id SERIAL PRIMARY KEY,
     category TEXT UNIQUE NOT NULL,
+    post_id INTEGER[] NOT NULL REFERENCES posts ON DELETE CASCADE,
 )
 
 CREATE TABLE posts(
